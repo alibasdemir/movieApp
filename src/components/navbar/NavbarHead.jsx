@@ -78,7 +78,15 @@ function NavbarHead() {
     <div>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container fluid>
-          <Navbar.Brand href="#">BEYZAPROJE</Navbar.Brand>
+          <Navbar.Brand href="#">
+          <img
+            src="/logo.png"
+            width="60"
+            height="60"
+            className="d-inline-block align-top"
+            alt="Logo"
+          />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav

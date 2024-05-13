@@ -57,19 +57,26 @@ function MovieDetail() {
           <Card className="text-center">
             <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}`} alt="" />
             <Card.Body>
-              <Card.Title style={{ color: "red" }}>FİLM İSMİ === {movieDetails.title}</Card.Title>
-                <h2>FİLM tagline === {movieDetails.tagline}</h2>
-                <p>FİLM AÇIKLAMASI === {movieDetails.overview}</p>
-                <p>FİLM SAYFASI === {movieDetails.homepage}</p>
-                <p>FİLM DİLİ === {movieDetails.original_language}</p>
-                <p>FİLM ÇIKIŞ TARİHİ === {movieDetails.release_date}</p>
-                <p>FİLM PUANI === {movieDetails.vote_average}</p>
-                <h3>{movieDetails.title} Category </h3>
-                {movieDetails.genres.map((category, index) => (
-                  <div key={index}>
+              <Card.Title style={{ color: "red" }}>{movieDetails.title}</Card.Title>
+              <div className="card">
+    <div className="card-body">
+        <ul className="list-group list-group-flush">
+            <li className="list-group-item">{movieDetails.tagline}</li>
+            <li className="list-group-item">Description {movieDetails.overview}</li>
+
+            <li className="list-group-item">Movie Language: {movieDetails.original_language}</li>
+            <li className="list-group-item">Movie Release Date: {movieDetails.release_date}</li>
+            <li className="list-group-item">Movie Score: {movieDetails.vote_average}</li>
+            {movieDetails.genres.map((category, index) => (
+                  <li className='list-group-item' key={index}>
                     {category.name}
-                  </div>
+                  </li>
                 ))}
+            <li className="list-group-item">Movie Page: {movieDetails.homepage}</li>
+        </ul>
+    </div>
+</div>
+
               {myList.includes(movieId) ? (
                 <Button variant="danger" onClick={handleRemoveFromList}>Remove from My List</Button>
               ) : (
